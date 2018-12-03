@@ -45,15 +45,7 @@ Function Xmas_Function01 {
      $total = 0
      foreach($strNumber in $strNumbers)
      {
-        $number = StripPlusAndMinus($strNumber)
-        if ($strNumber[0] -eq "+")
-        {
-            $total += $number
-        }
-        if($strNumber[0] -eq "-")
-        {
-            $total -= $number
-        }
+        $total += $strNumber
      }
      return $total
 }
@@ -168,9 +160,6 @@ $file = Get-InputFile
 #Let's put that input file into a nice array
 $input = Get-InputFileContents($file)
 Xmas_Function01($input)
-Xmas_Function02_Test01
-Xmas_Function02_Test02
-Xmas_Function02_Test03
-Xmas_Function02_Test04
-Xmas_Function02($input)
+
+#Xmas_Function02($input)
 cmd /c pause | out-null
